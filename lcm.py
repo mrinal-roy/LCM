@@ -54,7 +54,6 @@ print('The Lowest Common Multiple of the given numbers is : {}'.format(lcm_temp)
 
 
 
-
             
 
 
