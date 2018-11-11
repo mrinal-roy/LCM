@@ -31,13 +31,19 @@ for count in range(0,N):
 
 num_list.sort()  # Sorts the list of user input numbers into ascending order
 
-for k in range(len(num_list)):  #Take 2 nos. starting from the list start to the end of list
-    if k!=(len(num_list)-1):   # condition to check that the end of list is not reached
-        Lowest_Common_Multiple = lcmOfTwoNos(num_list[k],num_list[k+1]) #uses function lcmOfTwoNos(a,b) to compute LCM of two numbers
-    else:   # If it is last list element, it takes the last element and the first elment to find the LCM of those 2 numbers
-        Lowest_Common_Multiple = lcmOfTwoNos(num_list[0],num_list[k])
+# Below while loop iterates each time with two numbers each time and
+# every next iteration it replaces one of the number with the lcm from the
+# previous iteration
 
-print('The Lowest Common Multiple of the given numbers is : {}'.format(Lowest_Common_Multiple)) # The last value of the LCM is printed to the user
+k=0
+num2 = num_list[k+1]
+while (k<N): 
+    num1 = num_list[k]
+    lcm_temp = lcmOfTwoNos(num1,num2)
+    num2 = lcm_temp
+    k += 1
+
+print('The Lowest Common Multiple of the given numbers is : {}'.format(lcm_temp)) # The last value of the LCM is printed to the user
 
 
 
